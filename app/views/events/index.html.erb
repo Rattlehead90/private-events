@@ -1,9 +1,15 @@
-<h1 class="text-green-500">Eventual</h1>
-<h2>Your personal guide in the world of happenings</h2>
-<ul>
-  <% @events.each do |event| %>
-    <li>
-      <%= event.name %>
-    </li>
-  <% end %>
-</ul>
+<div class="min-w-max">
+  <div class="bg-blue-300 px-8 py-4 rounded-lg m-12">
+    <h1 class="text-white font-semibold font-sans text-4xl font-extrabold">Eventual</h1>
+    <h2 class="text-gray-100 italic font-semibold">Your personal guide in the world of happenings</h2>
+  </div>
+  <div class="text-center font-light">
+    <ul>
+      <% @events.each do |event| %>
+        <li class="m-5 transition hover:cursor-pointer hover:text-gray-500">
+          <%= event.name %>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+</div>
