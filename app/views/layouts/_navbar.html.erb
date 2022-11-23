@@ -1,0 +1,12 @@
+<div class="container">
+  <ul>
+  <li><%= link_to "Eventual",root_path  %></li>
+    <% if current_user %>
+      <li><%= link_to "Edit Account", edit_user_registration_path, class: "" %></li>
+      <li><%= link_to "Sign Out", destroy_user_session_path, method: :delete, class: "" %></li>
+    <% else %>
+      <li><%= link_to "Sign Up", new_user_registration_path, class: ""%></li>
+      <li><%= link_to "Sign In", new_user_session_path, class: ""%></li>
+    <% end %>
+  </ul>
+</div>
