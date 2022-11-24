@@ -1,12 +1,12 @@
 <div class="container">
-  <ul>
-  <li><%= link_to "Eventual",root_path  %></li>
+  <ul class="flex gap-5 px-6 py-5">
+  <li><%= link_to "Eventual", root_path, class: "text-blue-500 font-bold bg-blue-100 rounded-full p-3 hover:text-white hover:bg-blue-800 transition inline-block w-40 text-center" %></li>
     <% if current_user %>
-      <li><%= link_to "Edit Account", edit_user_registration_path, class: "" %></li>
-      <li><%= button_to "Sign Out", destroy_user_session_path, method: :delete, class: "" %></li>
+      <li><%= link_to "Edit Account", edit_user_registration_path, class: "bg-gray-100 rounded-full p-3 hover:text-white hover:bg-gray-500 transition inline-block w-32 text-center" %></li>
+      <li><%= button_to "Sign Out", destroy_user_session_path, method: :delete, class: "bg-gray-100 rounded-full p-3 hover:text-white hover:bg-gray-500 transition block w-32 text-center" %></li>
     <% else %>
-      <li><%= link_to "Sign Up", new_user_registration_path, class: ""%></li>
-      <li><%= link_to "Sign In", new_user_session_path, class: ""%></li>
+      <li><%= link_to "Sign Up", new_user_registration_path, class: "bg-gray-100 rounded-full p-3 hover:text-white hover:bg-gray-500 transition inline-block w-32 text-center"%></li>
+      <li><%= link_to "Sign In", new_user_session_path, class: "bg-gray-100 rounded-full p-3 hover:text-white hover:bg-gray-500 transition inline-block w-32 text-center"%></li>
     <% end %>
   </ul>
 </div>
