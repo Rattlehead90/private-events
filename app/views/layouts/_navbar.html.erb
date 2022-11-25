@@ -4,6 +4,7 @@
     <% if current_user %>
       <li><%= link_to "Edit Account", edit_user_registration_path, class: "bg-gray-100 rounded-full p-3 hover:text-white hover:bg-gray-500 transition inline-block w-32 text-center" %></li>
       <li><%= button_to "Sign Out", destroy_user_session_path, method: :delete, class: "bg-gray-100 rounded-full p-3 hover:text-white hover:bg-gray-500 transition block w-32 text-center" %></li>
+      <li><%= link_to "Add Event", new_event_path, class: "bg-gray-100 rounded-full p-3 hover:text-white hover:bg-gray-500 transition block w-32 text-center"%></li>
     <% else %>
       <li><%= link_to "Sign Up", new_user_registration_path, class: "bg-gray-100 rounded-full p-3 hover:text-white hover:bg-gray-500 transition inline-block w-32 text-center"%></li>
       <li><%= link_to "Sign In", new_user_session_path, class: "bg-gray-100 rounded-full p-3 hover:text-white hover:bg-gray-500 transition inline-block w-32 text-center"%></li>
