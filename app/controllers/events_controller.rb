@@ -3,11 +3,15 @@ class EventsController < ApplicationController
     @events = Event.all
   end
 
-  def create
-    @event = current_user.build_event(event_params)
+  def new
+    @event = current_user.created_events.build
+  end
 
-    if @event.save 
-      redirect_to @event
+  def create
+    @event = current_user.created_events.build(event_params)
+
+    if @event.save
+      redirect_to @event 
     else
       render :new, status: :unprocessable_entity
     end
@@ -16,6 +20,6 @@ class EventsController < ApplicationController
   private
 
   def event_params
-    params.require(:event).permit(:name, :date)
+    params.require(:event).permit(:name, :date, :creator_id)
   end
 end
