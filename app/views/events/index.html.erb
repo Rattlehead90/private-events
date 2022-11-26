@@ -11,13 +11,24 @@
     <% if user_signed_in? %>
       <ul>
         <% @events.each do |event| %>
-          <li class="m-5 transition hover:cursor-pointer hover:text-gray-500">
-            <%= link_to event.name, event_path(event) %>
-          </li>
+          <% if event.creator == current_user %>
+            <li class="m-5 transition hover:cursor-pointer hover:text-gray-500">
+              <%= link_to event.name, event_path(event) %>
+            </li>
+          <% end %>
         <% end %>
       </ul>
     <% else %>
       <p>Please sign in to be able to see your events</p>
     <% end %>
   </div>
+</div>
+
+<div class="container">
+  <p>All events currently online: </p>
+  <ul>
+    <% @events.each do |event| %>
+      <li><%= event.name %></li>
+    <% end %>
+  </ul>
 </div>
