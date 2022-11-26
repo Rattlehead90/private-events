@@ -9,10 +9,10 @@
   </div>
   <div class="text-center font-light">
     <% if user_signed_in? %>
-      <ul>
+      <ul class="mb-16">
         <% @events.each do |event| %>
           <% if event.creator == current_user %>
-            <li class="m-5 transition hover:cursor-pointer hover:text-gray-500">
+            <li class="m-2 transition hover:cursor-pointer hover:text-gray-500">
               <%= link_to event.name, event_path(event) %>
             </li>
           <% end %>
@@ -24,11 +24,11 @@
   </div>
 </div>
 
-<div class="container">
-  <p>All events currently online: </p>
+<div class="container bg-slate-500 w-2/6 rounded-lg p-6 mx-auto my-8 text-white">
+  <p class="font-bold" >All events currently online: </p>
   <ul>
     <% @events.each do |event| %>
-      <li><%= event.name %></li>
+      <li class="px-8 py-1 text-gray-300 hover:text-white hover:cursor-pointer transition"><%= link_to event.name, event_path(event) %></li>
     <% end %>
   </ul>
 </div>
