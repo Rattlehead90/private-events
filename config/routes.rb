@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
-  get 'event_attendances/create'
-  get 'event_attendances/destroy'
-  get 'event_attendances/update'
+  get 'event_attendances/create', to: 'event_attendances#create'
+  get 'event_attendances/destroy', to: 'event_attendances#destroy'
+  get 'event_attendances/update', to: 'event_attendances#update'
   devise_for :users
   root 'events#index'
 
