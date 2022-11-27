@@ -2,9 +2,12 @@
   <h1 class="font-bold text-3xl" ><%= @event.name %></h1>
 
   <ul>
-    <li><%= link_to "Delete Event", event_path(@event), data: {
-                                turbo_method: :delete,
-                                turbo_confirm: "Are you sure?"
-    }%></li>
+    <% if user_signed_in? %>
+      <li><%= link_to "Delete Event", event_path(@event), data: {
+                                  turbo_method: :delete,
+                                  turbo_confirm: "Are you sure?"
+      }%></li>
+      <li><%= link_to "Attend Event", event_attendances_create_path %></li>
+    <% end %>
   </ul>
 </div>
