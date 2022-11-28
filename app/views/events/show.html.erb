@@ -13,4 +13,8 @@
       <p>Please <%= link_to 'log in', new_user_session_path, class: "cursor:pointer underline hover:text-gray-300 transition"%> to be able to see the content</p>
     <% end %>
   </ul>
+
+  <div>
+    <%= render 'attendees' %>
+  </div>
 </div>

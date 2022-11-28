@@ -3,7 +3,7 @@ class EventAttendancesController < ApplicationController
     @attendance = current_user.event_attendances.build(event_attendance_params)
 
     if @attendance.save
-      redirect_to root_path
+      redirect_to @attendance
     else
       render :show, status: :unprocessable_entity
     end
