@@ -10,6 +10,10 @@ class EventAttendancesController < ApplicationController
   end
 
   def destroy
+    @attendance = EventAttendance.find_by(attended_event_id: params[:id])
+    @attendance.destroy
+
+    redirect_to event_path
   end
 
   def update
