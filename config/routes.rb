@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   root 'events#index'
 
   resources :events
-  resources :event_attendances, only: [:create, :destroy, :update]
+  resources :event_attendances, only: [:create, :destroy]
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Defines the root path route ("/")

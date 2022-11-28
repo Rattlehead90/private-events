@@ -3,15 +3,14 @@
 
   <ul>
     <% if user_signed_in? %>
-      <li><%= link_to "Delete Event", event_path(@event), data: {
-                                  turbo_method: :delete,
-                                  turbo_confirm: "Are you sure?"
-      }%></li>
+      <li><%= render 'delete' %></li>
       <% if current_user.attended_events.include?(@event) %>
         <li><%= render 'cancel' %></li>
       <% else %>
         <li><%= render 'attend' %></li>
       <% end %>
+    <% else %>
+      <p>Please <%= link_to 'log in', new_user_session_path, class: "cursor:pointer underline hover:text-gray-300 transition"%> to be able to see the content</p>
     <% end %>
   </ul>
 </div>

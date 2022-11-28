@@ -15,9 +15,6 @@ class EventAttendancesController < ApplicationController
 
     redirect_to event_path
   end
-
-  def update
-  end
   
   private
 
