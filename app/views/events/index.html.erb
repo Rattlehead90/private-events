@@ -3,11 +3,4 @@
   <%= render 'users-events' %>
 </div>
 
-<div class="container bg-slate-500 w-2/6 rounded-lg p-6 mx-auto my-8 text-white">
-  <p class="font-bold" >All events currently online: </p>
-  <ul>
-    <% @events.each do |event| %>
-      <li class="px-8 py-1 text-gray-300 hover:text-white hover:cursor-pointer transition"><%= link_to event.name, event_path(event) %></li>
-    <% end %>
-  </ul>
-</div>
+<%= render 'all-events' %>
