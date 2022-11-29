@@ -16,6 +16,7 @@ class EventsController < ApplicationController
     @event = current_user.created_events.build(event_params)
 
     if @event.save
+      flash[:success] = 'Your event has been created!'
       redirect_to @event 
     else
       render :new, status: :unprocessable_entity
@@ -25,6 +26,7 @@ class EventsController < ApplicationController
   def destroy
     @event = Event.find(params[:id])
     @event.destroy
+    flash[:success] = 'Your event has been deleted!'
 
     redirect_to root_path, status: :see_other
   end

@@ -3,6 +3,7 @@ class EventAttendancesController < ApplicationController
     @attendance = current_user.event_attendances.build(event_attendance_params)
 
     if @attendance.save
+      flash[:success] = 'Great! See you at the event!'
       redirect_to @attendance
     else
       render :show, status: :unprocessable_entity
@@ -13,6 +14,7 @@ class EventAttendancesController < ApplicationController
     @attendance = EventAttendance.find_by(attended_event_id: params[:id])
     @attendance.destroy
 
+    flash[:success] = 'Your attendance has been cancelled'
     redirect_to event_path
   end
   
