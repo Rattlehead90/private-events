@@ -10,4 +10,4 @@ can choose to attend any published event. Attended events are displayed
 in their home page. 
 
 # Brief Tour
-![](https://github.com/Rattlehead90/private-events/private-events-demo.gif)
+![](https://github.com/Rattlehead90/private-events/blob/abd671237ad85761b0a756b87821ae70ee7835ff/private-events-demo.gif)
