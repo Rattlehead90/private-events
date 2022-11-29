@@ -1,20 +1,19 @@
 <div class="flex flex-col w-72 m-auto gap-8">
   <h1 class="font-bold text-3xl" ><%= @event.name %></h1>
 
-  <ul>
-    <% if user_signed_in? %>
-      <li><%= render 'delete' %></li>
-      <% if current_user.attended_events.include?(@event) %>
-        <li><%= render 'cancel' %></li>
-      <% else %>
-        <li><%= render 'attend' %></li>
-      <% end %>
-    <% else %>
-      <p>Please <%= link_to 'log in', new_user_session_path, class: "cursor:pointer underline hover:text-gray-300 transition"%> to be able to see the content</p>
-    <% end %>
-  </ul>
-
-  <div>
-    <%= render 'attendees' %>
-  </div>
+  <% if user_signed_in? %>
+      <ul>
+        <li><%= render 'delete' %></li>
+        <% if current_user.attended_events.include?(@event) %>
+          <li><%= render 'cancel' %></li>
+        <% else %>
+          <li><%= render 'attend' %></li>
+        <% end %>
+      </ul>
+        <div>
+          <%= render 'attendees' %>
+        </div>
+  <% else %>
+    <p>Please <%= link_to 'log in', new_user_session_path, class: "cursor:pointer underline hover:text-gray-300 transition"%> to be able to see the content</p>
+  <% end %>
 </div>
