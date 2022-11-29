@@ -1,4 +1,4 @@
-<div class="container">
+<div class="flex justify-between">
   <ul class="flex gap-5 px-6 pt-5">
   <li><%= link_to "Eventual", root_path, class: "text-blue-500 font-bold bg-blue-100 rounded-full p-3 hover:text-white hover:bg-blue-800 transition inline-block w-40 text-center" %></li>
     <% if current_user %>
@@ -10,4 +10,5 @@
       <li><%= link_to "Sign In", new_user_session_path, class: "btn-navbar"%></li>
     <% end %>
   </ul>
+  <p class="px-6 pt-5">by <a href="https://github.com/Rattlehead90" class="group animate-pulse hover:animate-none underline hover:text-white hover:ml-8 hover:no-underline hover:bg-indigo-400 hover:p-2 hover:rounded-lg transition-all decoration-sky-500 ">Rattlehead90 <span class="absolute ml-[-9rem] group-hover:scale-100 scale-0 transition-all align-middle"><%= image_tag "github.png", style: 'width: 20px;' %></span> </a>, 2022</p>
 </div>
