@@ -11,7 +11,7 @@ class EventAttendancesController < ApplicationController
   end
 
   def destroy
-    @attendance = EventAttendance.find_by(attended_event_id: params[:id])
+    @attendance = EventAttendance.find_by(attended_event_id: params[:id], attendee_id: current_user.id)
     @attendance.destroy
 
     flash[:success] = 'Your attendance has been cancelled'
