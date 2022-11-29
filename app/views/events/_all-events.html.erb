@@ -1,8 +1,8 @@
 <div class="picked-events-container">
   <p class="font-bold" >All events currently online: </p>
-  <ul>
+  <ul class="flex flex-wrap">
     <% @events.each do |event| %>
-      <li class="px-8 py-1 text-gray-300 hover:text-white hover:cursor-pointer transition"><%= link_to event.name, event_path(event) %></li>
+      <li class="px-8 py-1 w-52 text-gray-300 hover:text-white hover:cursor-pointer transition"><%= link_to event.name, event_path(event) %></li>
     <% end %>
   </ul>
 </div>
