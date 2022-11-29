@@ -1,27 +1,6 @@
 <div class="flex flex-col justify-center align-middle">
-  <div class="bg-blue-300 px-8 py-4 rounded-lg m-12 block w-2/6 self-center">
-    <h1 class="text-white font-semibold font-sans text-4xl font-extrabold">Eventual</h1>
-      <% if user_signed_in? %>
-        <h2 class="text-gray-100 italic font-semibold"><%= current_user.name %>'s personal events: </h2>
-      <% else %>
-        <h2 class="text-gray-100 italic font-semibold">Your personal guide in the world of happenings</h2>
-      <% end %>
-  </div>
-  <div class="text-center font-light">
-    <% if user_signed_in? %>
-      <ul class="mb-16">
-        <% @events.each do |event| %>
-          <% if event.creator == current_user %>
-            <li class="m-2 transition hover:cursor-pointer hover:text-gray-500">
-              <%= link_to event.name, event_path(event) %>
-            </li>
-          <% end %>
-        <% end %>
-      </ul>
-    <% else %>
-      <p>Please sign in to be able to see your events</p>
-    <% end %>
-  </div>
+  <%= render 'header-block' %>
+  <%= render 'users-events' %>
 </div>
 
 <div class="container bg-slate-500 w-2/6 rounded-lg p-6 mx-auto my-8 text-white">
