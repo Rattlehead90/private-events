@@ -16,6 +16,10 @@
   .wrapping-div {
     @apply flex flex-col w-72 m-auto gap-8;
   }
+
+  .event-link {
+    @apply m-2 transition hover:cursor-pointer hover:text-gray-500;
+  }
 }
 
 

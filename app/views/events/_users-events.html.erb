@@ -1,12 +1,20 @@
-<div class="text-center font-light">
+<div class="flex justify-between w-96 m-auto align-middle font-light">
   <% if user_signed_in? %>
     <ul class="mb-16">
+      <li class="event-link hover:cursor-default hover:text-black font-bold mb-4" >Created Events</li>
       <% @events.each do |event| %>
         <% if event.creator == current_user %>
-          <li class="m-2 transition hover:cursor-pointer hover:text-gray-500">
+          <li class="event-link">
             <%= link_to event.name, event_path(event) %>
           </li>
         <% end %>
+      <% end %>
+    </ul>
+
+    <ul>
+      <li class="event-link hover:cursor-default hover:text-black font-bold mb-4">Events to Attend</li>
+      <% current_user.attended_events.each do |attended_event| %>
+        <li class="event-link"><%= link_to attended_event.name, event_path(attended_event) %></li>
       <% end %>
     </ul>
   <% else %>
