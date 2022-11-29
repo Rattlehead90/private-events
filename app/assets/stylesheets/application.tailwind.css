@@ -20,6 +20,10 @@
   .event-link {
     @apply m-2 transition hover:cursor-pointer hover:text-gray-500;
   }
+
+  .picked-events-container {
+    @apply container bg-slate-500 w-[520px] rounded-lg p-6 mx-auto my-8 text-white;
+  }
 }
 
 
