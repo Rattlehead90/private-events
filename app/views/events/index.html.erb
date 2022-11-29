@@ -1,8 +1,11 @@
 <div class="flex flex-col justify-center align-middle">
   <%= render 'header-block' %>
-  <%= render 'users-events' %>
+  <% unless current_user.attended_events.empty? && current_user.created_events.empty? %>
+    <%= render 'users-events' %>
+  <% else %>
+    <p class="text-center font-extralight italic">Create or attend an event to keep track of them...</p>
+  <% end %>
 </div>
 
 <%= render 'all-events' %>
-
 <%= render 'time-dependent' %>
