@@ -5,21 +5,4 @@
 
 <%= render 'all-events' %>
 
-<div class="picked-events-container bg-orange-400">
-  <p class="font-bold" >All <b class="text-3xl font-extrabold">passed</b> events: </p>
-  <ul>
-    <% @events.each do |event| %>
-      <% if event.date < Date.today %>
-        <li class="px-8 py-1 text-white hover:text-gray-100 hover:cursor-pointer transition"><%= link_to event.name, event_path(event) %></li>
-      <% end %>
-    <% end %>
-  </ul>
-  <p class="font-bold" >All <b class="text-3xl font-extrabold">future</b> events: </p>
-  <ul>
-    <% @events.each do |event| %>
-      <% if event.date > Date.today %>
-        <li class="px-8 py-1 text-white hover:text-gray-100 hover:cursor-pointer transition"><%= link_to event.name, event_path(event) %></li>
-      <% end %>
-    <% end %>
-  </ul>
-</div>
+<%= render 'time-dependent' %>
